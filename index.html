@@ -7,6 +7,15 @@
     <title>Napełnianie kubków</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <style>
+        body {
+            --first_cup: #FFF700;
+            --second_cup: #299617;
+            --third_cup: #5DADEC;
+            --fourth_cup: #9c51b6;
+            --fifth_cup: #ff3855;
+            --sixth_cup: #a83731;
+        }
+        
         h1 {
             font-family: 'Lobster', cursive;
             text-align: center;
@@ -17,7 +26,15 @@
         .kubek {
             width: 200px;
             height: 200px;
-            border: 1px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            border-radius: 0px 0px 20px 20px;
+            cursor: pointer;
+            float: left;
+            margin: 20px;
+            background-size: 200% 200%;
+            background-image: linear-gradient(to top, var(--first_cup) 50%, transparent 50%);
         }
     </style>
 </head>
@@ -29,5 +46,15 @@
 
     </div>
 </body>
+<script>
+    function kubekKlik(evt) {
+        console.log("kliknięty")
+    }
+
+    let kubki = document.querySelectorAll('.kubek');
+    kubki.forEach(kubek => {
+        kubek.addEventListener('click', kubekKlik)
+    });
+</script>
 
 </html>
